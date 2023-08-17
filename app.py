@@ -14,8 +14,8 @@ import replicate, os, json, time, requests
 
 # Configurations
 # 读取环境变量
-openai_api_key = os.environ.get("OPENAI_API_KEY")
-replicate_token = os.environ.get("REPLICATE_TOKEN")
+openai_api_key = os.getenv("OPENAI_API_KEY")
+replicate_token = os.getenv("REPLICATE_TOKEN")
 
 # 设置header
 REPLICATE_HEADER = {
