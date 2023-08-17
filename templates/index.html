@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined GPT Web Application</title>
+</head>
+
+<body>
+
+<h1>Welcome to the Combined GPT Web Application</h1>
+
+<form action="/" method="post">
+    <p>Choose the service:</p>
+    <input type="radio" id="openai" name="choice" value="openai">
+    <label for="openai">ChatGPT by OpenAI</label><br>
+
+    <input type="radio" id="duplicate" name="choice" value="duplicate">
+    <label for="duplicate">ImageGPT by Midjourney</label><br><br>
+
+    <p>Please enter your question or describe the photo you'd like:</p>
+    <p><input type="text" name="question"></p>
+    <p><input type="submit" value="Enter"></p>
+</form>
+
+<p>Reply:</p>
+<div id="result-display">
+    {% if result.startswith('http') %}
+        <img src="{{result}}" alt="Generated Image">
+    {% else %}
+        <p>{{result}}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
